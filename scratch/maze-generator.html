@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maze Generator - Robopanda</title>
+  <!-- Font Robopanda -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap" rel="stylesheet">
+  <!-- Style Robopanda -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff3d6;
+      margin: 0;
+      color: #333;
+    }
+    h1, h2, h3 {
+      font-family: 'Fredoka One', cursive;
+      color: #4d97ff;
+    }
+    .navbar {
+      background-color: #4d97ff;
+      color: white;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar h1 { margin: 0; font-size: 22px; }
+    .navbar a {
+      color: #fff3d6;
+      text-decoration: none;
+      margin-left: 12px;
+      font-weight: bold;
+    }
+    .hero {
+      background-color: #ffab19;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .hero h2 { margin: 0 0 10px; font-size: 28px; }
+    .content {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .content h3 { margin-top: 28px; margin-bottom: 10px; font-size: 22px; }
+    .content ul, .content ol { margin-left: 22px; line-height: 1.6; }
+    .card {
+      background: white;
+      border: 2px solid #4d97ff;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 12px 0;
+    }
+    .callout {
+      background: #fff;
+      border: 2px solid #ffab19;
+      border-left: 6px solid #ffab19;
+      padding: 12px;
+      margin: 16px 0;
+    }
+    code {
+      background: #eef2ff;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    footer {
+      background-color: #4d97ff;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Robopanda</h1>
+    <div class="nav-links">
+      <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="../learning.html"><i class="fas fa-graduation-cap"></i> Learning</a>
+      <a href="scratch.html"><i class="fas fa-code"></i> Coding Scratch</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h2>Maze Generator</h2>
+    <p>Belajar membuat generator maze otomatis di Scratch dengan konsep acak terarah dan DFS backtracking.</p>
+  </header>
+
+  <!-- Konten Pembelajaran -->
+  <section class="content">
+    <h3>🎯 Tujuan Pembelajaran</h3>
+    <ul>
+      <li>Membuat maze otomatis di Scratch menggunakan algoritma DFS (Depth-First Search).</li>
+      <li>Memahami konsep acak terarah, loop, dan logika backtracking.</li>
+      <li>Melatih logika berpikir dan pemrograman visual dengan blok Scratch.</li>
+    </ul>
+
+    <h3>🧠 Konsep Dasar</h3>
+    <ul>
+      <li><strong>Acak Terarah:</strong> memilih jalur secara acak tapi tetap membentuk maze yang masuk akal.</li>
+      <li><strong>DFS Backtracking:</strong> menjelajah sel, mundur jika buntu, hingga semua sel dikunjungi.</li>
+      <li><strong>Perfect Maze:</strong> hanya ada satu jalur dari start ke finish, tanpa loop.</li>
+    </ul>
+
+    <h3>🧰 Persiapan Proyek</h3>
+    <ul>
+      <li>Tambahkan <strong>Extension Pen</strong>.</li>
+      <li>Buat sprite <strong>Generator</strong> untuk menggambar maze.</li>
+      <li>Buat sprite <strong>Pemain</strong> untuk uji coba navigasi.</li>
+      <li>Buat variabel: <code>cellSize</code>, <code>cols</code>, <code>rows</code>.</li>
+      <li>Buat list: <code>stack</code>, <code>visited</code>.</li>
+    </ul>
+
+    <h3>🔁 Algoritma DFS Backtracking</h3>
+    <ol>
+      <li>Mulai dari sel awal (misalnya 0,0), tandai sebagai dikunjungi dan masukkan ke <code>stack</code>.</li>
+      <li>Selama <code>stack</code> tidak kosong:
+        <ul>
+          <li>Ambil sel terakhir dari <code>stack</code>.</li>
+          <li>Cari tetangga yang belum dikunjungi.</li>
+          <li>Jika ada, pilih satu secara acak, hapus dinding di antara, tandai dikunjungi, dan tambahkan ke <code>stack</code>.</li>
+          <li>Jika tidak ada, hapus sel dari <code>stack</code> (mundur).</li>
+        </ul>
+      </li>
+      <li>Setelah selesai, gambar dinding berdasarkan data sel.</li>
+    </ol>
+
+    <h3>🧩 Blok Scratch yang Digunakan</h3>
+    <ul>
+      <li><strong>Events:</strong> when green flag clicked</li>
+      <li><strong>Control:</strong> repeat, forever, if, repeat until</li>
+      <li><strong>Operators:</strong> pick random, <, >, =, and, or</li>
+      <li><strong>Variables:</strong> set, change</li>
+      <li><strong>Lists:</strong> add, delete, item # of, length of</li>
+      <li><strong>Pen:</strong> clear, pen down, pen up, set pen size, set pen color</li>
+      <li><strong>Motion:</strong> go to x: y, move</li>
+    </ul>
+
+    <h3>📚 Langkah-Langkah Pembelajaran</h3>
+    <ol>
+      <li>Inisialisasi variabel dan list saat green flag diklik.</li>
+      <li>Set posisi awal dan tambahkan ke <code>stack</code> dan <code>visited</code>.</li>
+      <li>Gunakan loop <code>repeat until</code> untuk menjalankan DFS.</li>
+      <li>Setiap langkah, pilih tetangga acak dan hapus dinding di antara sel.</li>
+      <li>Setelah selesai, gambar dinding dengan Pen berdasarkan data sel.</li>
+      <li>Tambahkan sprite Pemain dan kontrol dengan tombol panah.</li>
+    </ol>
+
+    <h3>🧪 Pengujian dan Peningkatan</h3>
+    <ul>
+      <li>Pastikan semua sel dikunjungi dan maze tidak bolong.</li>
+      <li>Tambahkan tombol "Generate" dan "Reset" untuk memulai ulang.</li>
+      <li>Ubah <code>cellSize</code> untuk tingkat kesulitan berbeda.</li>
+      <li>Tambahkan timer dan skor untuk tantangan navigasi.</li>
+    </ul>
+
+    <h3>⚠️ Kesalahan Umum</h3>
+    <ul>
+      <li><strong>Nama variabel/list tidak konsisten:</strong> hindari spasi dan campur huruf besar-kecil.</li>
+      <li><strong>Konversi koordinat salah:</strong> gunakan rumus yang sama di semua bagian.</li>
+      <li><strong>Dinding satu arah:</strong> selalu hapus dinding di kedua sel (current dan neighbor).</li>
+      <li><strong>Pen tumpang tindih:</strong> gunakan pen up/pen down dengan jarak tepat <code>cellSize</code>.</li>
+    </ul>
+
+    <h3>🔗 Navigasi Halaman</h3>
+    <
