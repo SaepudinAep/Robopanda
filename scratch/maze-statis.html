@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze Statis - Robopanda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { margin:0; font-family:'Roboto',sans-serif; background:#fff3d6; color:#1e293b; }
+    .navbar { background:#ffab19; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+    .navbar h1 { font-family:'Fredoka One',cursive; color:#fff; margin:0; }
+    .nav-links a { background:#4d97ff; color:#fff; padding:8px 16px; border-radius:20px; text-decoration:none; font-weight:bold; margin-left:10px; transition:0.3s; }
+    .nav-links a:hover { background:#ff661a; }
+    header { text-align:center; padding:60px 20px; background:linear-gradient(135deg,#4d97ff,#ffab19); color:#fff; }
+    header h2 { font-family:'Fredoka One',cursive; font-size:2.2rem; margin:0; }
+    .content { padding:40px 20px; max-width:900px; margin:auto; }
+    .content h3 { font-family:'Fredoka One',cursive; color:#4d97ff; margin-top:30px; }
+    .content ul, .content ol { margin-left:22px; line-height:1.6; }
+    .card { background:#fff; border-radius:12px; padding:20px; margin:20px 0; box-shadow:0 6px 10px rgba(0,0,0,0.1); }
+    .callout { background:#fff; border:2px solid #ffab19; border-left:6px solid #ffab19; padding:12px; margin:20px 0; border-radius:8px; }
+    code { background:#eef2ff; padding:2px 6px; border-radius:4px; }
+    footer { background:#4d97ff; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h1>Robopanda</h1>
+    <div class="nav-links">
+      <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="../learning.html"><i class="fas fa-graduation-cap"></i> Learning</a>
+      <a href="scratch.html"><i class="fas fa-code"></i> Coding Scratch</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h2>Maze Statis</h2>
+    <p>Latihan navigasi pemain di maze statis untuk melatih kontrol arah dan logika sederhana.</p>
+  </header>
+
+  <!-- KONTEN -->
+  <section class="content">
+    <div class="card">
+      <h3>🎯 Tujuan Pembelajaran</h3>
+      <ul>
+        <li>Mengenalkan konsep maze tanpa generator otomatis.</li>
+        <li>Melatih kontrol sprite dengan tombol panah.</li>
+        <li>Memahami deteksi tabrakan dengan dinding.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🧰 Persiapan Proyek</h3>
+      <ul>
+        <li>Buat backdrop maze statis (gambar labirin sederhana).</li>
+        <li>Buat sprite <strong>Pemain</strong> (lingkaran kecil atau karakter).</li>
+        <li>Tambahkan variabel <code>x</code>, <code>y</code> untuk posisi (opsional).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🧩 Blok Scratch yang Digunakan</h3>
+      <ul>
+        <li><strong>Events:</strong> when green flag clicked, when key pressed</li>
+        <li><strong>Motion:</strong> change x by, change y by</li>
+        <li><strong>Sensing:</strong> touching color, touching edge</li>
+        <li><strong>Control:</strong> if, forever</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📚 Langkah-Langkah</h3>
+      <ol>
+        <li>Siapkan backdrop maze statis dengan dinding berwarna kontras.</li>
+        <li>Posisikan sprite Pemain di titik start.</li>
+        <li>Gunakan blok <code>when key pressed</code> untuk gerakan panah.</li>
+        <li>Tambahkan kondisi <code>if touching color [dinding]</code> → kembalikan sprite ke posisi sebelumnya.</li>
+        <li>Tentukan titik finish dengan warna berbeda atau sprite tujuan.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>🧪 Pengujian & Peningkatan</h3>
+      <ul>
+        <li>Pastikan sprite tidak bisa menembus dinding.</li>
+        <li>Tambahkan timer untuk menghitung waktu sampai finish.</li>
+        <li>Tambahkan skor atau level untuk variasi kesulitan.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🔗 Navigasi Halaman</h3>
+      <ul>
+        <li><strong>Home:</strong> ../index.html</li>
+        <li><strong>Learning:</strong> ../learning.html</li>
+        <li><strong>Coding Scratch:</strong> scratch.html</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Tips:</strong> Gunakan warna dinding yang kontras dengan sprite Pemain agar deteksi tabrakan lebih jelas.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Robopanda Robotic & Coding</p>
+  </footer>
+
+</body>
+</html>
