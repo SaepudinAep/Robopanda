@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stickman Adventure - Robopanda Scratch Learning</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maze Generator - Robopanda</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { margin:0; font-family:'Roboto',sans-serif; background:#fff3d6; color:#1e293b; line-height:1.7; }
+    body { margin:0; font-family:'Roboto',sans-serif; background:#fff3d6; color:#1e293b; }
     .navbar { background:#ffab19; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
     .navbar h1 { font-family:'Fredoka One',cursive; color:#fff; margin:0; }
     .nav-links a { background:#4d97ff; color:#fff; padding:8px 16px; border-radius:20px; text-decoration:none; font-weight:bold; margin-left:10px; transition:0.3s; }
     .nav-links a:hover { background:#ff661a; }
     header { text-align:center; padding:60px 20px; background:linear-gradient(135deg,#4d97ff,#ffab19); color:#fff; }
     header h2 { font-family:'Fredoka One',cursive; font-size:2.2rem; margin:0; }
-    .container { max-width:900px; margin:auto; padding:40px 20px; }
-    .session-card { background:#fff; border-radius:15px; padding:30px; margin-bottom:30px; box-shadow:0 6px 10px rgba(0,0,0,0.1); border-left:6px solid #ffab19; }
-    .badge { display:inline-block; background:#4d97ff; color:#fff; padding:4px 12px; border-radius:99px; font-size:0.8rem; font-weight:bold; text-transform:uppercase; margin-bottom:15px; }
-    h2 { font-family:'Fredoka One',cursive; color:#ff661a; margin-top:0; }
-    .section-title { font-weight:bold; margin:20px 0 10px 0; color:#4d97ff; }
-    .story-content { background:#fffbe6; border-left:5px solid #ffab19; padding:15px; border-radius:8px; font-style:italic; }
-    .logic-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0; }
-    .logic-item { background:#f1f5f9; padding:12px; border-radius:10px; border:1px solid #cbd5e1; }
-    .code-window { background:#1e1e1e; color:#dcdcdc; padding:15px; border-radius:10px; font-family:'Fira Code',monospace; margin-top:10px; border-top:25px solid #333; position:relative; }
-    .code-window::before { content:"•••"; position:absolute; top:-20px; left:15px; color:#ff5f56; letter-spacing:5px; font-size:18px; }
-    .instruction { color:#4d97ff; font-weight:bold; }
-    .variable { color:#ffab19; font-weight:bold; }
-    .challenge { background:#e0f2fe; padding:15px; border-radius:10px; margin-top:15px; }
-    img { max-width:100%; border-radius:10px; margin:15px 0; }
+    .content { padding:40px 20px; max-width:900px; margin:auto; }
+    .content h3 { font-family:'Fredoka One',cursive; color:#4d97ff; margin-top:30px; }
+    .content ul, .content ol { margin-left:22px; line-height:1.6; }
+    .card { background:#fff; border-radius:12px; padding:20px; margin:20px 0; box-shadow:0 6px 10px rgba(0,0,0,0.1); }
+    .callout { background:#fff; border:2px solid #ffab19; border-left:6px solid #ffab19; padding:12px; margin:20px 0; border-radius:8px; }
+    code { background:#eef2ff; padding:2px 6px; border-radius:4px; }
     footer { background:#4d97ff; color:#fff; text-align:center; padding:20px; margin-top:40px; }
-    footer a { color:#ffab19; margin:0 8px; text-decoration:none; }
-    @media(max-width:600px){ .logic-grid{grid-template-columns:1fr;} header h2{font-size:1.8rem;} }
   </style>
 </head>
 <body>
@@ -41,6 +31,7 @@
     <div class="nav-links">
       <a href="../index.html"><i class="fas fa-home"></i> Home</a>
       <a href="../learning.html"><i class="fas fa-graduation-cap"></i> Learning</a>
+      <a href="scratch.html"> Coding Scratch</a>
     </div>
   </nav>
 
