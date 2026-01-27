@@ -1,198 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robopanda Robotic & Coding</title>
-  <!-- Google Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #fefefe;
-      color: #333;
-    }
-
-    /* NAVBAR */
-    nav {
-      background: #ffab19; /* Scratch orange */
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav h1 {
-      font-family: 'Fredoka One', cursive;
-      color: #fff;
-      margin: 0;
-    }
-    nav a {
-      background: #4d97ff;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background: #ff661a;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #4d97ff, #ffab19);
-      color: #fff;
-    }
-    .hero h1 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    .hero h2 {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
-    .hero .btn {
-      background: #ffab19;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .hero .btn:hover {
-      background: #4d97ff;
-    }
-
-    /* SECTIONS */
-    .section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .section h3 {
-      font-family: 'Fredoka One', cursive;
-      color: #4d97ff;
-      margin-bottom: 20px;
-    }
-    .focus {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .item {
-      flex: 1;
-      min-width: 250px;
-      background: #fff3d6;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .item strong {
-      display: block;
-      margin-bottom: 10px;
-      color: #ff661a;
-    }
-    .item i {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #4d97ff;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #4d97ff;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    .footer a {
-      color: #ffab19;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorer Kurikulum | Robopanda Robotic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style_explorer.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h1>Robopanda</h1>
-    <a href="learning.html"><i class="fas fa-graduation-cap"></i> Learning</a>
-  </nav>
+  <header class="explorer-header">
+    <div class="header-top">
+      <div class="logo-area">
+        <img src="https://res.cloudinary.com/dmm6avtxd/image/upload/Robopanda-Education_zwx0bm.png" alt="Logo Robopanda" class="main-logo">
+        <div class="logo-text">
 
-  <!-- HERO -->
-  <header class="hero">
-    <h1>Robopanda Robotic & Coding</h1>
-    <h2>Robotics, coding, and creative learning</h2>
-    <p class="tagline">
-      An early-stage learning platform for robotics and coding.
-    </p>
-    <a href="learning.html" class="btn"><i class="fas fa-play"></i> Start Learning</a>
-  </header>
-
-  <!-- INTRO -->
-  <section id="intro" class="section">
-    <h3>Who We Are</h3>
-    <p>
-      Robopanda Robotic & Coding is a learning platform focused on introducing
-      robotics and coding through logic, creativity, and play.
-    </p>
-    <p>
-      We believe that understanding systems should start simple —
-      through exploration, experimentation, and meaningful projects.
-    </p>
-  </section>
-
-  <!-- FOCUS -->
-  <section id="focus" class="section">
-    <h3>What We Teach</h3>
-    <div class="focus">
-      <div class="item">
-        <i class="fas fa-brain"></i>
-        <strong>Logical Thinking</strong>
-        <p>Problem-solving through games, puzzles, and structured challenges.</p>
+        </div>
       </div>
-      <div class="item">
-        <i class="fas fa-code"></i>
-        <strong>Coding Fundamentals</strong>
-        <p>From Scratch-based projects to basic programming concepts.</p>
-      </div>
-      <div class="item">
-        <i class="fas fa-robot"></i>
-        <strong>Robotics Concepts</strong>
-        <p>Understanding how software interacts with real-world systems.</p>
+      <div class="search-box">
+        <input type="text" id="searchMateri" placeholder="Cari misi robotik...">
+        <span class="search-btn"></span> 
       </div>
     </div>
-  </section>
 
-  <!-- DIRECTION -->
-  <section id="direction" class="section">
-    <h3>Our Direction</h3>
-    <p>
-      This platform is designed to grow step by step.
-      Starting from basic learning materials, it will gradually evolve
-      into a structured space for robotics and coding education.
-    </p>
-  </section>
+    <nav class="level-tabs" id="levelTabs">
+      <button class="tab-item active" data-level="all">Semua</button>
+    </nav>
+  </header>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Robopanda Robotic & Coding</p>
-    <p>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-      <a href="mailto:info@robopanda.com"><i class="fas fa-envelope"></i></a>
-    </p>
-  </footer>
+  <main class="explorer-main">
+    <section class="feed-section" id="live-missions-wrapper">
+      <div class="section-header">
+        <h2> Misi Aktif <span class="badge-live">LIVE</span></h2>
+        <p>Materi yang sedang dipelajari di kelas saat ini</p>
+      </div>
+      <div class="horizontal-scroll" id="live-missions-list">
+        <div class="loading-placeholder">Memuat misi aktif...</div>
+      </div>
+    </section>
 
+    <div id="level-rows-container"></div>
+  </main>
+
+  <div id="modal-explorer" class="modal-overlay">
+    <div class="modal-content">
+      <button class="btn-close-modal" id="closeModal">&times; Tutup</button>
+      
+      <div class="modal-hero">
+        <img id="modal-image" src="" alt="Project Image">
+        
+        <img src="https://res.cloudinary.com/dmm6avtxd/image/upload/Robopanda-Education_zwx0bm.png" class="modal-watermark">
+        
+        <div class="modal-overlay-info">
+          <span class="badge-level" id="modal-level">LEVEL</span>
+          <h2 id="modal-title" class="modal-title">Judul Materi</h2>
+          <span class="date-info" id="modal-date">Terakhir diajarkan: -</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="content-block">
+          <h3>Ringkasan Misi</h3>
+          <p id="modal-description"></p>
+        </div>
+
+        <div class="content-block">
+          <h3>Rencana Pembelajaran</h3>
+          <div id="modal-detail" class="detail-text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="explorer-footer">
+  <div class="cta-container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h3>Mau Lihat Robot Lainnya? </h3>
+        <p>Ikuti perjalanan seru kami membangun berbagai robot unik setiap harinya!</p>
+      </div>
+      
+      <a href="https://www.instagram.com/robopandarobotic/" target="_blank" class="btn-ig-premium">
+        <svg class="icon-ig-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+        </svg>
+        Follow @robopandarobotic
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Robopanda Robotic Curriculum.</p>
+      <small>Proses yang bekerja, edukasi yang nyata.</small>
+    </div>
+  </div>
+</footer>
+  <script type="module" src="explorer.js"></script>
 </body>
 </html>
