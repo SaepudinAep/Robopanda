@@ -152,7 +152,7 @@ body {
 
 /* Kunci ukuran kartu agar seragam */
 .grid-layout .materi-card {
-  width: 260px !important; 
+  width: 240px !important; 
   flex: 0 0 260px;
 }
 
@@ -186,7 +186,7 @@ body {
 /* --- FOTO KARTU (KUNCI 3:4 PORTRAIT) --- */
 .card-image {
   width: 100%;
-  aspect-ratio: 3 / 4; /* Portrait 3:4 sesuai request terakhir */
+  aspect-ratio: 1 / 1; /* Portrait 3:4 sesuai request terakhir */
   overflow: hidden;
   background: #f0f2f5;
   position: relative;
@@ -450,3 +450,4 @@ body {
       aspect-ratio: 3 / 4 !important; /* Paksa Portrait */
   }
 }
+
