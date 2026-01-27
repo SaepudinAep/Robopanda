@@ -1,0 +1,506 @@
+:root {
+  --primary-color: #2ecc71; 
+  --secondary-color: #2c3e50; 
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --text-muted: #7f8c8d;
+  --shadow: 0 4px 15px rgba(0,0,0,0.08);
+  --border-radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* =========================================
+   🟢 HEADER & NAVIGATION
+   ========================================= */
+
+.explorer-header {
+  background: white;
+  padding: 1.5rem 1rem 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-area { display: flex; align-items: center; gap: 0.8rem; }
+.logo-icon { font-size: 2.5rem; }
+.logo-text h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+}
+.logo-text p {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: -5px;
+}
+
+.search-box {
+  background: #f1f3f5;
+  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-box input {
+  background: none; border: none; outline: none;
+  width: 100%; padding: 0.3rem; font-size: 0.9rem;
+}
+
+/* TAB LEVELS */
+.level-tabs {
+  max-width: 1200px; margin: 1rem auto 0;
+  display: flex; gap: 0.5rem; overflow-x: auto;
+  padding-bottom: 0.5rem; scrollbar-width: none; 
+}
+.level-tabs::-webkit-scrollbar { display: none; }
+
+.tab-item {
+  padding: 0.6rem 1.2rem; border-radius: 20px;
+  border: none; background: #f1f3f5; color: var(--text-muted);
+  font-weight: 500; cursor: pointer; white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.tab-item.active {
+  background: var(--primary-color); color: white;
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+/* =========================================
+   🟢 MAIN CONTENT & LAYOUTS
+   ========================================= */
+
+.explorer-main {
+  max-width: 1200px; margin: 2rem auto; padding: 0 1rem;
+}
+
+.feed-section { margin-bottom: 3rem; }
+.section-header { margin-bottom: 1.2rem; }
+.section-header h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.4rem; display: flex; align-items: center; gap: 0.8rem;
+}
+
+.badge-live {
+  font-family: 'Roboto', sans-serif; font-size: 0.6rem;
+  background: #e74c3c; color: white; padding: 2px 8px;
+  border-radius: 4px; animation: pulse 1.5s infinite;
+}
+
+/* --- HORIZONTAL SCROLL (Untuk Tab 'Semua') --- */
+.horizontal-scroll {
+  display: flex; gap: 1.2rem; overflow-x: auto;
+  padding: 1rem 0.2rem; scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+/* --- GANTI BAGIAN INI SAJA --- */
+.grid-layout {
+  display: flex;       /* Ganti dari columns ke flex */
+  flex-wrap: wrap;     /* Agar kartu turun ke bawah jika layar sempit */
+  gap: 20px;
+  justify-content: center; /* Kartu tetap rapi di tengah */
+  padding: 1.5rem 0;
+}
+
+/* Tambahkan ini untuk mengunci ukuran kartu agar identik dengan tab Semua */
+.grid-layout .materi-card {
+  width: 260px !important; 
+  flex: 0 0 260px; /* Kunci ukuran, jangan biarkan membesar */
+}
+
+/* =========================================
+   🟢 KARTU MATERI (FIXED 4:3 RATIO)
+   ========================================= */
+
+.materi-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+  display: inline-block; /* Agar tidak terpotong di mode masonry */
+  width: 100%;
+}
+
+/* Khusus mode horizontal scroll */
+.horizontal-scroll .materi-card {
+  min-width: 260px; max-width: 260px;
+  scroll-snap-align: start; display: block; margin-bottom: 0;
+}
+
+.materi-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Bingkai 4:3 */
+  overflow: hidden;
+  background: #f0f2f5;
+}
+
+.card-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Foto memenuhi bingkai tanpa sisa */
+}
+
+.card-icon-fallback {
+  font-size: 3.5rem;
+}
+
+.card-content { padding: 1.2rem; }
+.card-content h3 {
+  font-size: 1.1rem; color: var(--secondary-color); margin: 0.3rem 0;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-content p {
+  font-size: 0.85rem; color: var(--text-muted);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* =========================================
+   🟢 MODAL POPUP (HERO OVERLAY STYLE)
+   ========================================= */
+/* =========================================
+   🟢 KARTU MATERI (KUNCI 4:3)
+   ========================================= */
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Pasti 4:3 sesuai diskusi */
+  overflow: hidden;
+  background: #f0f2f5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Foto memenuhi bingkai secara rapi */
+}
+
+
+/* =========================================
+   🟢 MODAL POPUP (FULL IMAGE & GLASS OVERLAY)
+   ========================================= */
+
+.modal-overlay {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  display: none; justify-content: center; align-items: center;
+  z-index: 1000; padding: 1rem;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal-content {
+  background: #000; 
+  width: 100%; max-width: 500px;
+  /* RASIO 3:4 (TEGAK) - Agar foto dominan sampai bawah di HP */
+  aspect-ratio: 3 / 4; 
+  border-radius: 30px;
+  position: relative; 
+  overflow: hidden; 
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  animation: slideUp 0.4s ease-out;
+}
+
+/* FOTO SEBAGAI BACKGROUND PENUH */
+.modal-hero {
+  position: absolute; 
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1; /* Layer paling bawah */
+}
+
+#modal-image {
+  width: 100%; height: 100%;
+  object-fit: cover; /* Foto memenuhi seluruh area modal */
+}
+
+/* Vignette/Gradasi: Agar judul putih tetap tajam di atas foto */
+.modal-hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.4) 0%, 
+    transparent 30%, 
+    rgba(0,0,0,0.7) 100%
+  );
+  z-index: 2;
+}
+
+/* LOGO WATERMARK (Pojok Kiri Atas) */
+.modal-watermark {
+  position: absolute;
+  top: 20px; left: 20px;
+  width: 200px; /* Ukuran logo Robopanda */
+  height: auto;
+  z-index: 5;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  opacity: 0.9;
+}
+
+/* INFO JUDUL (Melayang di atas kotak transparan) */
+.modal-overlay-info {
+  position: absolute;
+  bottom: 48%; /* Menyesuaikan posisi di atas modal-body */
+  left: 20px; right: 20px;
+  z-index: 5;
+  color: white;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.8);
+}
+
+.modal-overlay-info h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.7rem; margin: 0;
+  line-height: 1.2;
+}
+
+/* BODY DENGAN TRANSPARANSI 70% (GLASSMORPHISM) */
+.modal-body {
+  position: absolute;
+  bottom: 20px; left: 15px; right: 15px;
+  z-index: 5; /* Layer paling atas bersama info judul */
+  
+  /* Efek Kaca Transparan 70% */
+  background: rgba(255, 255, 255, 0.7); 
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px);
+  
+  padding: 20px;
+  border-radius: 20px;
+  max-height: 42%; /* Membatasi tinggi agar foto tetap dominan */
+  overflow-y: auto; 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.content-block h3 { 
+  font-size: 0.85rem; 
+  color: var(--primary-color); 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.detail-text {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #1a1a1a; /* Teks lebih gelap agar kontras di BG terang */
+}
+
+/* TOMBOL TUTUP */
+.btn-close-modal {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  background: rgba(255,255,255,0.85); border: none;
+  padding: 0.5rem 1.2rem; border-radius: 30px;
+  font-weight: bold; cursor: pointer; 
+  z-index: 10; /* Pastikan selalu bisa diklik */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ANIMASI MUNCUL */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================
+   🟢 ANIMATIONS & FOOTER
+   ========================================= */
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.explorer-footer {
+  text-align: center; padding: 3rem 1rem; color: var(--text-muted);
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+  .modal-hero { height: 280px; }
+  .modal-overlay-info h2 { font-size: 1.5rem; }
+}
+
+.modal-body {
+  background: rgba(255, 255, 255, 0.7); /* Putih transparan 70% */
+  backdrop-filter: blur(15px); /* Efek blur kaca biar mewah */
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Garis halus biar elegan */
+}
+
+/* =========================================
+   🟢 RESIZE LOGO HEADER
+   ========================================= */
+
+.logo-area {
+  display: flex;
+  align-items: center; /* Menjaga logo & teks sejajar vertikal di tengah */
+  gap: 12px;
+}
+
+.main-logo {
+  /* Atur tinggi logo agar pas dengan tinggi teks header */
+  height: 80px; 
+  width: auto; /* Biar lebarnya menyesuaikan otomatis (tidak gepeng) */
+  
+  object-fit: contain;
+  /* Tambahkan sedikit filter agar logo lebih tajam */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); 
+  
+  transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+  transform: scale(1.05); /* Efek membesar dikit saat disentuh mouse */
+}
+
+/* Penyesuaian untuk layar HP agar tidak sesak */
+@media (max-width: 600px) {
+  .main-logo {
+    height: 35px; /* Lebih kecil sedikit di HP */
+  }
+  
+  .logo-text h1 {
+    font-size: 1.2rem; /* Kecilkan teks judul juga di HP */
+  }
+}
+
+/* Styling khusus Ikon SVG Instagram */
+.icon-ig-svg {
+  width: 20px;  /* Ukuran ikon */
+  height: 20px;
+  /* Mengikuti warna teks di tombol (Putih) */
+  fill: currentColor; 
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.btn-ig-premium:hover .icon-ig-svg {
+  /* Efek sedikit berputar saat tombol di-hover */
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.btn-ig-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Jarak antara ikon dan teks */
+  background: var(--primary-color, #2ecc71);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+  transition: all 0.3s ease;
+}
+
+.explorer-footer {
+  padding: 60px 20px 30px;
+  background: #f8fbf9; /* Latar belakang hijau sangat tipis */
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+}
+
+.cta-card {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  padding: 35px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06); /* Bayangan sangat halus */
+  border: 1px solid #f0f0f0;
+}
+
+.cta-content h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.cta-content p {
+  color: #777;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+/* Tombol Premium: Tidak kaku & lebih modern */
+.btn-ig-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #2ecc71; /* Hijau brand yang sedikit lebih kalem */
+  color: white;
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-ig-premium:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(46, 204, 113, 0.4);
+}
+
+.icon-ig-svg {
+  width: 22px;
+  height: 22px;
+  fill: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #999;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+}
