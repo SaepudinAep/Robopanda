@@ -199,7 +199,7 @@ body {
    ========================================= */
 .card-image {
   width: 100%;
-  aspect-ratio: 4 / 3; /* Pasti 4:3 sesuai diskusi */
+  aspect-ratio: 3 / 4; /* Pasti 4:3 sesuai diskusi */
   overflow: hidden;
   background: #f0f2f5;
   position: relative;
@@ -503,4 +503,5 @@ body {
   color: #999;
   border-top: 1px solid #eee;
   padding-top: 25px;
+
 }
